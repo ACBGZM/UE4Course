@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "Components/StaticMeshComponent.h"
+#include "GameFramework/Character.h"
 #include "FloatingActor.generated.h"
 
 UCLASS()
@@ -20,6 +21,7 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -30,10 +32,10 @@ public:
 
 	// 定义浮空动作相关变量
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FloatingActor")
-		float FloatSpeed = 20.0f;
+		float FloatSpeed = 100.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FloatingActor")
-		float RotationSpeed = 20.0f;
+		float RotationSpeed = 100.0f;
 	
 
 	// 定义碰撞事件

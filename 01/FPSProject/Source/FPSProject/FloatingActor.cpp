@@ -3,6 +3,7 @@
 
 #include "FloatingActor.h"
 #include "FPSProjectProjectile.h"
+#include "FPSProjectCharacter.h"
 
 // Sets default values
 AFloatingActor::AFloatingActor()
@@ -20,6 +21,11 @@ AFloatingActor::AFloatingActor()
 		VisualMesh->SetStaticMesh(CubeVisualAsset.Object);
 		VisualMesh->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
 	}
+
+
+	//// 获取Character
+	//myPawn = GetWorld()->GetFirstPlayerController()->GetCharacter();
+
 }
 
 // Called when the game starts or when spawned
@@ -62,7 +68,7 @@ void AFloatingActor::CheckActor(UPrimitiveComponent* OverlappedComponent, AActor
 	// 如果转换成功，则说明跟子弹类发生了碰撞
 	AFPSProjectProjectile* projectile = Cast<AFPSProjectProjectile>(OtherActor);
 
-	// 如果跟子弹发生碰撞，则双方销毁
+	// 如果跟子弹发生碰撞，则双方销毁，计数器加一
 	if (projectile == nullptr)
 	{
 		return;
@@ -71,6 +77,14 @@ void AFloatingActor::CheckActor(UPrimitiveComponent* OverlappedComponent, AActor
 	{
 		OtherActor->Destroy();
 		this->Destroy();
+
+
+
+		ACharacter* myPawn = GetWorld()->GetFirstPlayerController()->GetCharacter();
+
+		AFPSProjectCharacter* myCharacter = Cast<AFPSProjectCharacter>(myPawn);
+
+		myCharacter->AddDestroyFloatingActor();
 	}
 
 
