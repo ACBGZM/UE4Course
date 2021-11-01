@@ -85,8 +85,9 @@ AFPSProjectCharacter::AFPSProjectCharacter()
 
 	Health = 1.0f;
 	Energy = 1.0f;
-	Ammo = 15;
-	MaxAmmo = 15;
+	Ammo = 10;
+	MaxAmmo = 10;
+	TotalAmmo = 30;
 }
 
 void AFPSProjectCharacter::BeginPlay()

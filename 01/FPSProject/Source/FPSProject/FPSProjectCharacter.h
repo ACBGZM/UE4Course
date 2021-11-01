@@ -158,6 +158,7 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Score")
 		int32 MaxAmmo;
 
-
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Score")
+		int32 TotalAmmo;
 };
 
