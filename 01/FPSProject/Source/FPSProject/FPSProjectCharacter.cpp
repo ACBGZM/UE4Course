@@ -88,6 +88,7 @@ AFPSProjectCharacter::AFPSProjectCharacter()
 	Ammo = 10;
 	MaxAmmo = 10;
 	TotalAmmo = 30;
+	AFPSProjectCharacter::DestroyFloatingActor = 0;
 }
 
 void AFPSProjectCharacter::BeginPlay()
@@ -151,6 +152,7 @@ void AFPSProjectCharacter::OnFire()
 		return; 
 	}
 
+	TotalAmmoUsed += 1;
 
 	// try and fire a projectile
 	if (ProjectileClass != nullptr)
@@ -312,4 +314,10 @@ bool AFPSProjectCharacter::EnableTouchscreenMovement(class UInputComponent* Play
 	}
 	
 	return false;
+}
+
+
+void AFPSProjectCharacter::AddDestroyFloatingActor()
+{
+	DestroyFloatingActor += 1;
 }

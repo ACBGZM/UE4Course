@@ -160,5 +160,14 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Score")
 		int32 TotalAmmo;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Score")
+		int32 TotalAmmoUsed;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Score")
+		int32 DestroyFloatingActor;
+
+	UFUNCTION()
+		void AddDestroyFloatingActor();
 };
 
