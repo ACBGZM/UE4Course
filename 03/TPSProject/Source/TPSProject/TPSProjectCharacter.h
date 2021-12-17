@@ -69,14 +69,6 @@ public:
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
 
-public:
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "HUD")
-		float Health;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "HUD")
-		float Energy;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "HUD")
-		float Armor;
 };
 
